@@ -1,0 +1,15 @@
+id,payee,spent,category
+1, sheetz, 32.45, fuel
+2, martins,225.52,food
+3, wells fargo, 1100, mortgage
+4, joe the plumber, 275, repairs
+5, comcast, 110, tv
+6, bp, 40, fuel
+7, aldi, 120, food
+8, nationwide, 150, car insurance
+9, nationwide, 100, life insurance
+10, jim electric, 140, utilities
+11, propane, 200, utilities
+12, county water, 100, utilities
+13, county sewer, 105, utilities
+14, 401k, 500, retirement
