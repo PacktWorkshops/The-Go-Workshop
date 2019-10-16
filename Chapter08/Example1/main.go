@@ -20,7 +20,6 @@ func Compare(a, b string) int {
 }
 // https://golang.org/src/strings/replace.go
 package strings
-
 import (
 	"io"
 	"sync"
