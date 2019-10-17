@@ -7,5 +7,5 @@ func main() {
 	packtString := "Packt"
 
 	jointString := fmt.Sprintf("%s", helloString, packtString)
-	fmt.Sprintf(jointString)
+	fmt.Println(jointString)
 }
