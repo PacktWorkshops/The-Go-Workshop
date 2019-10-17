@@ -1,11 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+	"fmt"
+)
 
 func main() {
-	helloString := "Hello"
-	packtString := "Packt"
-
-	jointString := fmt.Sprintf("%s", helloString, packtString)
-	fmt.Sprintf(jointString)
+	fmt.Println("Hello")
+	log.Println("Packt")
 }
+
