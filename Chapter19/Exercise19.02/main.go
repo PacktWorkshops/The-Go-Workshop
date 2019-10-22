@@ -25,7 +25,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	var userInput = &input{
 		Comment: r.FormValue("input"),
 	}
-
 	t := template.Must(template.New("test").Parse(content))
 	err := t.Execute(w, userInput)
 	if err != nil {
