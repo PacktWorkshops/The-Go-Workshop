@@ -1,5 +1,4 @@
 package main
-
 import (
 	"crypto/rand"
 	"crypto/rsa"
@@ -15,7 +14,6 @@ import (
 	"os"
 	"time"
 )
-
 func main() {
 	serverCert, serverKey, err := generate()
 	if err != nil {
@@ -27,7 +25,6 @@ func main() {
 	fmt.Println("Server Key:")
 	fmt.Printf("%s\n", serverKey)
 }
-
 func generate() (cert []byte, privateKey []byte, err error) {
 	serialNumber, err := rand.Int(rand.Reader, big.NewInt(27))
 	if err != nil {
@@ -67,7 +64,6 @@ func generate() (cert []byte, privateKey []byte, err error) {
 		})
 	return cert, privateKey, nil
 }
-
 func client(caCert []byte, ClientCert tls.Certificate) (err error) {
 	certPool := x509.NewCertPool()
 	certPool.AppendCertsFromPEM(caCert)
@@ -91,7 +87,6 @@ func client(caCert []byte, ClientCert tls.Certificate) (err error) {
 	fmt.Printf("%s: %s", time.Now().Format(time.Stamp), body)
 	return err
 }
-
 func runServer(certFile string, key string, clientCert []byte) (err error) {
 	fmt.Println("starting HTTP server")
 	http.HandleFunc("/", hello)
@@ -123,7 +118,6 @@ func runServer(certFile string, key string, clientCert []byte) (err error) {
 	}
 	return nil
 }
-
 func hello(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("%s: Ping\n", time.Now().Format(time.Stamp))
 	fmt.Fprintf(w, "Pong\n")
