@@ -1,12 +1,8 @@
 package main
 
-import (
-	"net/http"
-	"fmt"
-)
+    import "fmt"
 
-func main() {
-	fmt.Println("Hello")
-	log.Println("Packt")
+func
+main(){
+	fmt.    Println("Hello Packt")
 }
-

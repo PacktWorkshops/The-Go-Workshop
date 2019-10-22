@@ -1,8 +1,7 @@
 package main
 
-    import "fmt"
+import "fmt"
 
-func
-main(){
-	fmt.    Println("Hello Packt")
+func main() {
+	fmt.Println("Hello Pact")
 }
