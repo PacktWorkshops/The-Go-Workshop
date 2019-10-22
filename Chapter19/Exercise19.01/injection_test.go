@@ -1,5 +1,4 @@
 package exercise1
-
 import (
 	"database/sql"
 	"fmt"
@@ -9,15 +8,12 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/stretchr/testify/assert"
 )
-
 var db *sql.DB
-
 type UserDetails struct {
 	Id         string
 	CardNumber string
 	Address    string
 }
-
 var testData = []*UserDetails{
 	{
 		Id:         "1",
@@ -30,7 +26,6 @@ var testData = []*UserDetails{
 		Address:    "2 Chi Creek",
 	},
 }
-
 func getConnection() (*sql.DB, error) {
 	conn, err := sql.Open("sqlite3", "test.DB")
 	if err != nil {
@@ -38,18 +33,15 @@ func getConnection() (*sql.DB, error) {
 	}
 	return conn, nil
 }
-
 func initializeDB(db *sql.DB) error {
 	_, err := db.Exec(`CREATE TABLE IF NOT EXISTS USER_DETAILS (USER_ID TEXT, PHONE TEXT, ADDRESS TEXT)`)
 	if err != nil {
 		return err
 	}
-
 	stmt, err := db.Prepare(`INSERT INTO USER_DETAILS (USER_ID, PHONE, ADDRESS) VALUES (?, ?, ?)`)
 	if err != nil {
 		return err
 	}
-
 	for _, user := range testData {
 		_, err := stmt.Exec(user.Id, user.CardNumber, user.Address)
 		if err != nil {
@@ -58,7 +50,6 @@ func initializeDB(db *sql.DB) error {
 	}
 	return nil
 }
-
 func tearDownDB(db *sql.DB) error {
 	_, err := db.Exec("DROP TABLE USER_DETAILS")
 	if err != nil {
@@ -66,7 +57,6 @@ func tearDownDB(db *sql.DB) error {
 	}
 	return nil
 }
-
 func TestMain(m *testing.M) {
 	var err error
 	db, err = getConnection()
@@ -74,7 +64,6 @@ func TestMain(m *testing.M) {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-
 	err = initializeDB(db)
 	if err != nil {
 		fmt.Println(err)
@@ -86,7 +75,6 @@ func TestMain(m *testing.M) {
 		os.Exit(1)
 	}
 }
-
 func TestUpdatePhoneSecure(t *testing.T) {
 	var tests = []struct {
 		ID    string
@@ -110,5 +98,4 @@ func TestUpdatePhoneSecure(t *testing.T) {
 			assert.EqualError(t, err, test.err)
 		}
 	}
-
 }
