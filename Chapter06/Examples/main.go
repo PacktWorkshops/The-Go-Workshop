@@ -1,12 +1,26 @@
 package main
-
-import "fmt"
-
+import (
+  "fmt"
+  "errors"
+)
 func main() {
-	nums := []int{2, 4, 6, 8}
-	total := 0
-	for i := 0; i <= 10; i++ {
-		total += nums[i]
-	}
-	fmt.Println("Total: ", total)
+  test()
+  fmt.Println("This line will not get printed")
+}
+func test() {
+  n := func() {
+    fmt.Println("Defer in test")
+  }
+  defer n()
+  msg := "good-bye"
+  message(msg)
+}
+func message(msg string) {
+  f := func() {
+    fmt.Println("Defer in message func")
+  }
+  defer f()
+  if msg == "good-bye" {
+    panic(errors.New("something went wrong"))
+  }
 }
