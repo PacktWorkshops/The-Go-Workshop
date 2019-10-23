@@ -1,26 +1,24 @@
 package main
 import (
-  "fmt"
-  "errors"
+	"errors"
+	"fmt"
 )
 func main() {
-  test()
-  fmt.Println("This line will not get printed")
+	a()
+	fmt.Println("This line will now get printed from main() function")
 }
-func test() {
-  n := func() {
-    fmt.Println("Defer in test")
-  }
-  defer n()
-  msg := "good-bye"
-  message(msg)
+func a() {
+	b("good-bye")
+	fmt.Println("Back in function a()")
 }
-func message(msg string) {
-  f := func() {
-    fmt.Println("Defer in message func")
-  }
-  defer f()
-  if msg == "good-bye" {
-    panic(errors.New("something went wrong"))
-  }
+func b(msg string) {
+	defer func() {
+		if r:= recover(); r!= nil{
+			fmt.Println("error in func b()",r)
+		}	
+	}()
+	if msg == "good-bye" {
+		panic(errors.New("something went wrong"))
+	}
+	fmt.Print(msg)
 }
