@@ -33,15 +33,13 @@ func main() {
 	fmt.Println("Tracking hours worked thus far today: ", x(2))
 	fmt.Println("Tracking hours worked thus far today: ", x(3))
 	fmt.Println("Tracking hours worked thus far today: ", x(5))
-
-	d.LogHours(Tuesday, 10)
+	fmt.Println()
 	d.LogHours(Monday, 8)
 	d.LogHours(Tuesday, 10)
 	d.LogHours(Wednesday, 10)
 	d.LogHours(Thursday, 10)
 	d.LogHours(Friday, 6)
 	d.LogHours(Saturday, 8)
-
 	d.PayDetails()
 }
 
