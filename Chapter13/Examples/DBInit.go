@@ -19,7 +19,6 @@ DBCreate := `
 		OIDS = FALSE
 	)
 	TABLESPACE pg_default;
-	
 	ALTER TABLE public.test
 		OWNER to postgres;
 	`
