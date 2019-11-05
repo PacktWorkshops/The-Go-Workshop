@@ -1,19 +1,15 @@
 package main
-
 import (
 	"crypto/sha512"
 	"database/sql"
 	"fmt"
 	"os"
-
 	_ "github.com/mattn/go-sqlite3"
 )
-
 type UserDetails struct {
 	Id       string
 	Password string
 }
-
 var testData = []*UserDetails{
 	{
 		Id:       "1",
@@ -24,7 +20,6 @@ var testData = []*UserDetails{
 		Password: "5678",
 	},
 }
-
 func getConnection() (*sql.DB, error) {
 	conn, err := sql.Open("sqlite3", "test.DB")
 	if err != nil {
@@ -32,18 +27,15 @@ func getConnection() (*sql.DB, error) {
 	}
 	return conn, nil
 }
-
 func initializeDB(db *sql.DB) error {
 	_, err := db.Exec(`CREATE TABLE IF NOT EXISTS USER_DETAILS (USER_ID TEXT, PASSWORD TEXT)`)
 	if err != nil {
 		return err
 	}
-
 	stmt, err := db.Prepare(`INSERT INTO USER_DETAILS (USER_ID, PASSWORD) VALUES (?, ?)`)
 	if err != nil {
 		return err
 	}
-
 	for _, user := range testData {
 		_, err := stmt.Exec(user.Id, user.Password)
 		if err != nil {
@@ -52,7 +44,6 @@ func initializeDB(db *sql.DB) error {
 	}
 	return nil
 }
-
 func tearDownDB(db *sql.DB) error {
 	_, err := db.Exec("DROP TABLE USER_DETAILS")
 	if err != nil {
@@ -61,7 +52,6 @@ func tearDownDB(db *sql.DB) error {
 	}
 	return nil
 }
-
 func UpdatePassword(db *sql.DB, Id string, Password string) error {
 	query := `UPDATE USER_DETAILS SET PASSWORD=? WHERE USER_ID=?`
 	cipher := sha512.Sum512([]byte(Password))
@@ -82,7 +72,6 @@ func UpdatePassword(db *sql.DB, Id string, Password string) error {
 	}
 	return nil
 }
-
 func GetPassword(db *sql.DB, userID string) (resp []byte, err error) {
 	query := `SELECT PASSWORD FROM USER_DETAILS WHERE USER_ID = ?`
 	row := db.QueryRow(query, userID)
@@ -95,14 +84,12 @@ func GetPassword(db *sql.DB, userID string) (resp []byte, err error) {
 		return resp, err
 	}
 }
-
 func main() {
 	db, err := getConnection()
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-
 	err = initializeDB(db)
 	if err != nil {
 		fmt.Println(err)
@@ -113,14 +100,12 @@ func main() {
 	if err != nil {
 		fmt.Println("error updating password: ", err)
 	}
-
 	// Check password
 	fmt.Println("retrieving hashed password from db")
 	password, err := GetPassword(db, "1")
 	if err != nil {
 		fmt.Println("error retrieving password: ", err)
 	}
-
 	fmt.Println("checking password match")
 	ciphertext := sha512.Sum512([]byte("NewPassword"))
 	if string(ciphertext[:]) == string(password[:]) {
