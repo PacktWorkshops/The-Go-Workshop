@@ -138,7 +138,6 @@ func runServer(certFile string, key string, clientCert []byte) (err error) {
 	}
 	conn, err := net.Listen("tcp", server.Addr)
 	listener := tls.NewListener(conn, tlsConfig)
-
 	err = server.Serve(listener)
 
 	if err != nil {
