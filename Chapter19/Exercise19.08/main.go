@@ -23,7 +23,6 @@ func main() {
 	}
 	ioutil.WriteFile("private.key", serverKey, 0600)
 	ioutil.WriteFile("cert.pem", serverCert, 0777)
-
 	clientCert, clientKey, err := generate()
 	if err != nil {
 		fmt.Printf("error generating client certificate: %v", err)
@@ -139,7 +138,6 @@ func runServer(certFile string, key string, clientCert []byte) (err error) {
 	conn, err := net.Listen("tcp", server.Addr)
 	listener := tls.NewListener(conn, tlsConfig)
 	err = server.Serve(listener)
-
 	if err != nil {
 		return err
 	}
