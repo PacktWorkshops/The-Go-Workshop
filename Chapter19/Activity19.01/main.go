@@ -37,7 +37,6 @@ func initializeDB(db *sql.DB) error {
 	}
 	return nil
 }
-
 func tearDownDB(db *sql.DB) error {
 	_, err := db.Exec("DROP TABLE USER_DETAILS")
 	if err != nil {
