@@ -1,16 +1,13 @@
 package main
-
 import (
 	"crypto/md5"
 	"crypto/sha256"
 	"crypto/sha512"
 	"fmt"
-
 	"golang.org/x/crypto/blake2b"
 	"golang.org/x/crypto/blake2s"
 	"golang.org/x/crypto/sha3"
 )
-
 func getHash(input string, hashType string) string {
 	switch hashType {
 	case "MD5":
@@ -31,7 +28,6 @@ func getHash(input string, hashType string) string {
 		return fmt.Sprintf("%x", sha256.Sum256([]byte(input)))
 	}
 }
-
 func main() {
 	fmt.Println("MD5:", getHash("Hello!", "MD5"))
 	fmt.Println("SHA256:", getHash("Hello!", "SHA256"))
