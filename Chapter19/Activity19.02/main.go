@@ -1,5 +1,4 @@
 package main
-
 import (
 	"crypto"
 	"crypto/ecdsa"
@@ -12,7 +11,6 @@ import (
 	"os"
 	"time"
 )
-
 func main() {
 	// Generate CA certificates
 	caCert, caPriv, err := generateCert("CA cert", nil, nil)
@@ -30,7 +28,6 @@ func main() {
 	} else {
 		fmt.Println("leaf certificate generated successfully")
 	}
-
 	rootCerts := x509.NewCertPool()
 	rootCerts.AddCert(caCert)
 	options := x509.VerifyOptions{
@@ -43,9 +40,7 @@ func main() {
 	} else {
 		fmt.Println("leaf certificate successfully verified")
 	}
-
 }
-
 func generateCert(cn string, caCert *x509.Certificate, caPriv crypto.PrivateKey) (cert *x509.Certificate, privateKey crypto.PrivateKey, err error) {
 	serialNumber, err := rand.Int(rand.Reader, big.NewInt(27))
 	if err != nil {
@@ -55,7 +50,6 @@ func generateCert(cn string, caCert *x509.Certificate, caPriv crypto.PrivateKey)
 	if caCert == nil {
 		isCA = true
 	}
-
 	template := &x509.Certificate{
 		SerialNumber:          serialNumber,
 		Subject:               pkix.Name{CommonName: cn},
@@ -66,7 +60,6 @@ func generateCert(cn string, caCert *x509.Certificate, caPriv crypto.PrivateKey)
 		BasicConstraintsValid: true,
 		IsCA: isCA,
 	}
-
 	ecsdaKey, err := ecdsa.GenerateKey(elliptic.P521(), rand.Reader)
 	if err != nil {
 		return cert, nil, err
