@@ -20,13 +20,6 @@ var testData = []*UserDetails{
 		Password: "5678",
 	},
 }
-func getConnection() (*sql.DB, error) {
-	conn, err := sql.Open("sqlite3", "test.DB")
-	if err != nil {
-		return nil, fmt.Errorf("could not open db connection %v", err)
-	}
-	return conn, nil
-}
 func initializeDB(db *sql.DB) error {
 	_, err := db.Exec(`CREATE TABLE IF NOT EXISTS USER_DETAILS (USER_ID TEXT, PASSWORD TEXT)`)
 	if err != nil {
@@ -43,6 +36,13 @@ func initializeDB(db *sql.DB) error {
 		}
 	}
 	return nil
+}
+func getConnection() (*sql.DB, error) {
+	conn, err := sql.Open("sqlite3", "test.DB")
+	if err != nil {
+		return nil, fmt.Errorf("could not open db connection %v", err)
+	}
+	return conn, nil
 }
 func tearDownDB(db *sql.DB) error {
 	_, err := db.Exec("DROP TABLE USER_DETAILS")
