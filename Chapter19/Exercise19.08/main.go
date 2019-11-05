@@ -35,7 +35,6 @@ func main() {
 	if err != nil {
 		log.Fatalf("invalid key pair: %v", err)
 	}
-
 	errChan := make(chan error, 2)
 	go func() {
 		for {
