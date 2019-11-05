@@ -37,13 +37,7 @@ func initializeDB(db *sql.DB) error {
 	}
 	return nil
 }
-func getConnection() (*sql.DB, error) {
-	conn, err := sql.Open("sqlite3", "test.DB")
-	if err != nil {
-		return nil, fmt.Errorf("could not open db connection %v", err)
-	}
-	return conn, nil
-}
+
 func tearDownDB(db *sql.DB) error {
 	_, err := db.Exec("DROP TABLE USER_DETAILS")
 	if err != nil {
@@ -51,6 +45,13 @@ func tearDownDB(db *sql.DB) error {
 		return err
 	}
 	return nil
+}
+func getConnection() (*sql.DB, error) {
+	conn, err := sql.Open("sqlite3", "test.DB")
+	if err != nil {
+		return nil, fmt.Errorf("could not open db connection %v", err)
+	}
+	return conn, nil
 }
 func UpdatePassword(db *sql.DB, Id string, Password string) error {
 	query := `UPDATE USER_DETAILS SET PASSWORD=? WHERE USER_ID=?`
