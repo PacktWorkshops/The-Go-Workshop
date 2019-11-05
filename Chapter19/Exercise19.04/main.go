@@ -1,12 +1,10 @@
 package main
-
 import (
 	"crypto/aes"
 	"crypto/cipher"
 	"crypto/rand"
 	"fmt"
 )
-
 func main() {
 	const key = "mysecurepassword"
 	encrypted, err := encrypt([]byte("Hello World!"), key)
@@ -20,7 +18,6 @@ func main() {
 	}
 	fmt.Println("Decrypted Text: ", string(decrypted))
 }
-
 func encrypt(data []byte, key string) (resp []byte, err error) {
 	block, err := aes.NewCipher([]byte(key))
 	if err != nil {
@@ -36,7 +33,6 @@ func encrypt(data []byte, key string) (resp []byte, err error) {
 	}
 	return gcm.Seal(nonce, nonce, data, []byte("test")), nil
 }
-
 func decrypt(data []byte, key string) (resp []byte, err error) {
 	block, err := aes.NewCipher([]byte(key))
 	if err != nil {
