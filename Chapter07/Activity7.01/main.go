@@ -30,7 +30,6 @@ func main() {
 	employeeReview["Communication"] = "Poor"
 	employeeReview["Problem-solving"] = 4
 	employeeReview["Dependability"] = "Unsatisfactory"
-
 	d := Developer{Individual: Employee{Id: 1, FirstName: "Eric", LastName: "Davis"}, HourlyRate: 35, HoursWorkedInYear: 2400, Review: employeeReview}
 	m := Manager{Individual: Employee{Id: 2, FirstName: "Mr.", LastName: "Boss"}, Salary: 150000, CommissionRate: .07}
 err := d.ReviewRating()
@@ -66,7 +65,6 @@ func (d Developer) ReviewRating() error {
 	fmt.Printf("%s got a review rating of %.2f\n",d.FullName(),averageRating)
 	return nil
 }
-
 func (m Manager) Pay() (string, float64) {
 	fullName := m.Individual.FirstName + " " + m.Individual.LastName
 	return fullName, m.Salary + (m.Salary * m.CommissionRate)
@@ -81,7 +79,6 @@ func OverallReview(i interface{}) (int, error) {
 			return 0, err
 		}
 		return rating, nil
-
 	default:
 		return 0, errors.New("unknown type")
 	}
