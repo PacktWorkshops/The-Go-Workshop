@@ -1,10 +1,12 @@
 package main
+
 import (
 	"crypto/aes"
 	"crypto/cipher"
 	"crypto/rand"
 	"fmt"
 )
+
 func main() {
 	const key = "mysecurepassword"
 	encrypted, err := encrypt([]byte("Hello World!"), key)
@@ -27,11 +29,13 @@ func encrypt(data []byte, key string) (resp []byte, err error) {
 	if err != nil {
 		return resp, err
 	}
+	var dst []byte
 	nonce := make([]byte, gcm.NonceSize())
+	dst = nonce
 	if _, err := rand.Read(nonce); err != nil {
 		return resp, err
 	}
-	return gcm.Seal(nonce, nonce, data, []byte("test")), nil
+	return gcm.Seal(dst, nonce, data, []byte("test")), nil
 }
 func decrypt(data []byte, key string) (resp []byte, err error) {
 	block, err := aes.NewCipher([]byte(key))
