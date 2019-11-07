@@ -1,16 +1,22 @@
 package main
 
-// #include <stdio.h>
-// #include <stdlib.h>
-//
-// static void myprint(char* s) {
-//   printf("%s\n", s);
-// }
-import "C"
-import "unsafe"
+import (
+	"fmt"
+	"reflect"
+)
 
 func main() {
-	cs := C.CString("Hello World!")
-	C.myprint(cs)
-	C.free(unsafe.Pointer(cs))
+	var x = 5
+	Print(x)
+
+	var y = []string{"test"}
+	Print(y)
+
+	var z = map[string]string{"a": "b"}
+	Print(z)
+}
+
+func Print(a interface{}) {
+	fmt.Println("Type: ", reflect.TypeOf(a))
+	fmt.Println("Value: ", reflect.ValueOf(a))
 }
