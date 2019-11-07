@@ -1,12 +1,10 @@
 package main
-
 import (
 	"crypto/aes"
 	"crypto/cipher"
 	"crypto/rand"
 	"fmt"
 )
-
 func main() {
 	const key = "mysecurepassword"
 	encrypted, err := encrypt([]byte("Hello World!"), key)
