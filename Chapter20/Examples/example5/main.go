@@ -6,12 +6,17 @@ import (
 )
 
 func main() {
-	runDeepEqual(nil, nil)
-	runDeepEqual(make([]int, 10), make([]int, 10))
-	runDeepEqual([3]int{1, 2, 3}, [3]int{1, 2, 3})
-	runDeepEqual(map[int]string{1: "one", 2: "two"}, map[int]string{2: "two", 1: "one"})
+	var x = 5
+	Print(x)
+
+	var y = []string{"test"}
+	Print(y)
+
+	var z = map[string]string{"a": "b"}
+	Print(z)
 }
 
-func runDeepEqual(a, b interface{}) {
-	fmt.Printf("%v DeepEqual %v : %v\n", a, b, reflect.DeepEqual(a, b))
+func Print(a interface{}) {
+	fmt.Println("Type: ", reflect.TypeOf(a))
+	fmt.Println("Value: ", reflect.ValueOf(a))
 }
