@@ -1,9 +1,11 @@
 package exercise1
+
 import (
 	"database/sql"
 	"fmt"
 	"strings"
 )
+
 func UpdatePhone(db *sql.DB, Id string, phone string) error {
 	var builder strings.Builder
 	builder.WriteString("UPDATE USER_DETAILS SET PHONE=")
@@ -18,8 +20,12 @@ func UpdatePhone(db *sql.DB, Id string, phone string) error {
 	return nil
 }
 func UpdatePhoneSecure(db *sql.DB, Id string, phone string) error {
-	query := `UPDATE USER_DETAILS SET PHONE=? WHERE USER_ID=?`
-	result, err := db.Exec(query, phone, Id)
+	stmt, err := db.Prepare(`UPDATE USER_DETAILS SET PHONE=? WHERE USER_ID=?`)
+	if err != nil {
+		return err
+	}
+	defer stmt.Close()
+	result, err := stmt.Exec(phone, Id)
 	if err != nil {
 		return err
 	}
