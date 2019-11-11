@@ -36,7 +36,6 @@ WITH (
     OIDS = FALSE
 )
 TABLESPACE pg_default;
-
 ALTER TABLE users
     OWNER to postgres;
 `
@@ -71,7 +70,6 @@ if err != nil{
 	fmt.Println("The user's email address was successfully updated!")
 }
 update.Close()
-
 remove, removeErr := db.Prepare("DELETE FROM users WHERE ID=$1")
 if removeErr != nil{
 	panic(removeErr)
