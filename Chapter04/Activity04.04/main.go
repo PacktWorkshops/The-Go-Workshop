@@ -6,10 +6,10 @@ import (
 )
 
 var users = map[string]string{
-"305": "Sue",
-"204": "Bob",
-"631": "Jake",
-"073": "Tracy",
+	"305": "Sue",
+	"204": "Bob",
+	"631": "Jake",
+	"073": "Tracy",
 }
 
 func getName(id string) (string, bool) {

@@ -4,12 +4,15 @@ import (
 	"testing"
 )
 
-func TestGetIDs(t *testing.T) {
-	id1, id2, id3 := getIDs()
-	if id1 == id2 {
-		t.Fail()
+func TestGetUsers(t *testing.T) {
+	u := user{
+		name:    "Tracy",
+		age:     51,
+		balance: 98.43,
+		member:  true,
 	}
-	if id2 != id3 {
+	users := getUsers()
+	if len(users) != 4 || users[0] != u {
 		t.Fail()
 	}
 }
