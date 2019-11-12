@@ -116,7 +116,7 @@ if numberof == 0 {
 	    if err != nil{
 	    	panic(err)
 	    }
-		fmt.Println("The user:",name,"wiht email:",email,"has sent the following message:",message)
+		fmt.Println("The user:",name,"with email:",email,"has sent the following message:",message)
 	}
 }
 usersMessages.Close()
