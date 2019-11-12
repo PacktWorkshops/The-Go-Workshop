@@ -1,22 +1,17 @@
 package main
-
 import (
 	"fmt"
 	"reflect"
 )
-
 type Animal struct {
 	Name string
 }
-
 type Object struct {
 	Type string
 }
-
 type Person struct {
 	Name string
 }
-
 func MyPrint(input interface{}) {
 	t := reflect.TypeOf(input)
 	v := reflect.ValueOf(input)
@@ -29,7 +24,6 @@ func MyPrint(input interface{}) {
 		fmt.Println("I got an unknown entity")
 	}
 }
-
 func main() {
 	table := Object{Type: "Chair"}
 	MyPrint(table)
