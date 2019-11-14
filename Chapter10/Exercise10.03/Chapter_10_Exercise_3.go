@@ -1,9 +1,6 @@
 package main 
-
 import "time"
 import "fmt"
-
-
 func timeDiff(timezone string) (string, string)  {
 	Current := time.Now()
 	RemoteZone, _ := time.LoadLocation(timezone)
@@ -12,7 +9,6 @@ func timeDiff(timezone string) (string, string)  {
 	fmt.Println("The timezone:",timezone,"time is:",RemoteTime)
 	return Current.Format(time.ANSIC), RemoteTime.Format(time.ANSIC)
 }
-
 func main(){
 	fmt.Println(timeDiff("America/Los_Angeles"))
 }
