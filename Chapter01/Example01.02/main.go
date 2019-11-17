@@ -1,4 +1,5 @@
 package main
+
 // Import extra functionality from packages
 import (
 	"errors"
@@ -8,6 +9,7 @@ import (
 	"strconv"
 	"time"
 )
+
 // Taken from: https://en.wiktionary.org/wiki/Hello_World#Translations
 var helloList = []string{
 	"Hello, world",
@@ -16,6 +18,7 @@ var helloList = []string{
 	"سلام دنیا‎",
 	"Привет, мир",
 }
+
 func main() {
 	// Seed random number generator using the current time
 	rand.Seed(time.Now().UnixNano())
