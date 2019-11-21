@@ -19,7 +19,6 @@ func main() {
 	for idx, ssn := range validateSSN {
 		log.Printf("Validate data %#v %d of %d ", ssn, idx+1, len(validateSSN))
 		ssn = strings.Replace(ssn, "-", "", -1)
-
 		err := isNumber(ssn)
 		if err != nil {
 			log.Print(err)
