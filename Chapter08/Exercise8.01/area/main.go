@@ -1,6 +1,6 @@
 package main
 
-import "github.com/TrainingByPackt/Get-Ready-To-Go/Chapter08/Exercise8.01/shape"
+import "github.com/PacktWorkshops/The-Go-Workshop/Chapter08/Exercise8.01/shape"
 
 func main() {
 	t := shape.Triangle{Base: 15.5, Height: 20.1}

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	pr "github.com/TrainingByPackt/Get-Ready-To-Go/Chapter08/Activity8.01/payroll"
+	pr "github.com/PacktWorkshops/The-Go-Workshop/Chapter08/Activity8.01/payroll"
 )
 
 var employeeReview = make(map[string]interface{})
