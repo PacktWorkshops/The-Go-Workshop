@@ -22,7 +22,7 @@ func main() {
 
 		lastName:      "  ",
 		firstName:     "Abe",
-		bankName:      "WilkesBooth Inc",
+		bankName:      "XYZ Inc",
 		routingNumber: 17,
 		accountNumber: 1809,
 	}

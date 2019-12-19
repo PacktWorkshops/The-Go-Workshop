@@ -1,7 +1,5 @@
 package main
-
 import "fmt"
-
 func main() {
 	finished := make(chan bool)
 	names := []string{"Packt"}
@@ -11,7 +9,6 @@ func main() {
 		names = append(names, "Boogaloo")
 		finished <- true
 	}()
-
 	for _, name := range names {
 		fmt.Println(name)
 	}

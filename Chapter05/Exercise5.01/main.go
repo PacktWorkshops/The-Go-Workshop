@@ -5,23 +5,23 @@ import (
 )
 
 func main() {
-	printAge()
+	itemsSold()
 }
 
-func printAge() {
-	age := make(map[string]int)
-	age["John"] = 41
-	age["Celina"] = 109
-	age["Micah"] = 24
+func itemsSold() {
+	items := make(map[string]int)
+	items["John"] = 41
+	items["Celina"] = 109
+	items["Micah"] = 24
 
-	for k, v := range age {
-		fmt.Printf("%s is %d and ", k, v)
+	for k, v := range items {
+		fmt.Printf("%s sold %d items and ", k, v)
 		if v < 40 {
-			fmt.Println("young.")
+			fmt.Println("is below expectations.")
 		} else if v > 40 && v <= 100 {
-			fmt.Println("middle age")
+			fmt.Println("meets expectations.")
 		} else if v > 100 {
-			fmt.Println("over a century of living.")
+			fmt.Println("exceeded expectations.")
 		}
 	}
 }

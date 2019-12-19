@@ -3,13 +3,12 @@ package main
 import (
 	"errors"
 	"fmt"
-	"math"
 )
 
 const (
-	goodScore       = 450
-	lowScoreRation  = 10
-	goodScoreRation = 20
+	goodScore      = 450
+	lowScoreRatio  = 10
+	goodScoreRatio = 20
 )
 
 var (
@@ -19,49 +18,7 @@ var (
 	ErrLoanTerm    = errors.New("loan term not a multiple of 12")
 )
 
-func main() {
-	// Approved
-	score := 500
-	income := 1000.0
-	loanAmount := 1000.0
-	loanTerm := 24.0
-	totalInterest, payment, approved, err := checkLoan(score, income, loanAmount, loanTerm)
-	if err != nil {
-		fmt.Println("Error:", err)
-		return
-	}
-	fmt.Println("Applicant 1")
-	fmt.Println("Credit Score    :", score)
-	fmt.Println("Income          :", income)
-	fmt.Println("Loan Term       :", loanTerm)
-	fmt.Println("Score           :", score)
-	fmt.Println("Approved        :", approved)
-	fmt.Println("Monthly Payment :", payment)
-	fmt.Println("Total Cost      :", totalInterest)
-	fmt.Println("")
-
-	// Denied
-	score = 350
-	income = 1000.0
-	loanAmount = 10000.0
-	loanTerm = 12.0
-	totalInterest, payment, approved, err = checkLoan(score, income, loanAmount, loanTerm)
-	if err != nil {
-		fmt.Println("Error:", err)
-		return
-	}
-	fmt.Println("Applicant 2")
-	fmt.Println("Credit Score    :", score)
-	fmt.Println("Income          :", income)
-	fmt.Println("Loan Term       :", loanTerm)
-	fmt.Println("Score           :", score)
-	fmt.Println("Approved        :", approved)
-	fmt.Println("Monthly Payment :", payment)
-	fmt.Println("Total Cost      :", totalInterest)
-
-}
-
-func checkLoan(creditScore int, income float64, loanAmount float64, loanTerm float64) (totalInterest float64, payment float64, approved bool, err error) {
+func checkLoan(creditScore int, income float64, loanAmount float64, loanTerm float64) error {
 	// Good credit score gets a better rate
 	interest := 20.0
 	if creditScore >= goodScore {
@@ -69,48 +26,66 @@ func checkLoan(creditScore int, income float64, loanAmount float64, loanTerm flo
 	}
 	//validate score
 	if creditScore < 1 {
-		err = ErrCreditScore
-		return
+		return ErrCreditScore
 	}
 	// validate income
 	if income < 1 {
-		err = ErrIncome
-		return
+		return ErrIncome
 	}
 	// validate loanAmount
 	if loanAmount < 1 {
-		err = ErrLoanAmount
-		return
+		return ErrLoanAmount
 	}
 	//validate term
 	if loanTerm < 1 || int(loanTerm)%12 != 0 {
-		err = ErrLoanTerm
-		return
+		return ErrLoanTerm
 	}
 
-	// Convert interest % to a monthly rate we can use
-	rate := interest / 100 / 12
-	// compute the monthly payment figure
-	x := math.Pow(1+rate, loanTerm)
-	payment = (loanAmount * x * rate) / (x - 1)
-	// Round to a double
-	payment = math.Round(payment*100) / 100
+	rate := interest / 100
+	payment := ((loanAmount * rate) / loanTerm) + (loanAmount / loanTerm)
+
 	// Total cost of the loan
-	totalInterest = (payment * loanTerm) - loanAmount
-	totalInterest = math.Round(totalInterest*100) / 100
+	totalInterest := (payment * loanTerm) - loanAmount
 	// Can they afford the according to our rules?
-	if income < payment {
-		return
-	} else {
+	approved := false
+	if income > payment {
 		// payment percent of income
 		ratio := (payment / income) * 100
-		if creditScore >= goodScore && ratio > goodScoreRation {
-			return
-		} else if ratio > lowScoreRation {
-			return
+		if creditScore >= goodScore && ratio < goodScoreRatio {
+			approved = true
+		} else if ratio < lowScoreRatio {
+			approved = true
 		}
 	}
-	// Everything looks good
-	approved = true
-	return
+
+	fmt.Println("Credit Score    :", creditScore)
+	fmt.Println("Income          :", income)
+	fmt.Println("Loan Amount     :", loanAmount)
+	fmt.Println("Loan Term       :", loanTerm)
+	fmt.Println("Monthly Payment :", payment)
+	fmt.Println("Rate            :", interest)
+	fmt.Println("Total Cost      :", totalInterest)
+	fmt.Println("Approved        :", approved)
+	fmt.Println("")
+
+	return nil
+}
+
+func main() {
+	// Approved
+	fmt.Println("Applicant 1")
+	fmt.Println("-----------")
+	err := checkLoan(500, 1000, 1000, 24)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+	// Denied
+	fmt.Println("Applicant 2")
+	fmt.Println("-----------")
+	err = checkLoan(350, 1000, 10000, 12)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
 }

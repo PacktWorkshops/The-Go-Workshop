@@ -1,61 +1,43 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
-type Shape interface {
-	Area() float64
-	Name() string
-}
-
-type triangle struct {
-	base   float64
-	height float64
-}
-
-type rectangle struct {
-	length float64
-	width  float64
-}
-
-func (t triangle) Area() float64 {
-	return (t.base * t.height) / 2
-}
-
-func (t triangle) Name() string {
-	return "triangle"
-}
-
-type square struct {
-	side float64
-}
-
-func (r rectangle) Area() float64 {
-	return r.length * r.width
-}
-
-func (r rectangle) Name() string {
-	return "rectangle"
-}
-
-func (s square) Area() float64 {
-	return s.side * s.side
-}
-
-func (s square) Name() string {
-	return "square"
-}
-
-func printShapeDetails(shapes ...Shape) {
-	for _, item := range shapes {
-		fmt.Printf("The area of %s is: %.2f\n", item.Name(), item.Area())
-	}
-}
+var (
+	ErrHourlyRate  = errors.New("invalid hourly rate")
+	ErrHoursWorked = errors.New("invalid hours worked per week")
+)
 
 func main() {
-	t := triangle{base: 15.5, height: 20.1}
-	r := rectangle{length: 20, width: 10}
-	s := square{side: 10}
-	printShapeDetails(t, r, s)
+	pay, err := payDay(81, 50)
+	if err != nil {
+		fmt.Println(err)
+	}
+	pay, err = payDay(80, 5)
+	if err != nil {
+		fmt.Println(err)
+	}
+	pay, err = payDay(80, 50)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(pay)
+}
+
+func payDay(hoursWorked, hourlyRate int) (int, error) {
+	if hourlyRate < 10 || hourlyRate > 75 {
+		return 0, ErrHourlyRate
+	}
+	if hoursWorked < 0 || hoursWorked > 80 {
+		return 0, ErrHoursWorked
+	}
+	if hoursWorked > 40 {
+		hoursOver := hoursWorked - 40
+		overTime := hoursOver * 2
+		regularPay := hoursWorked * hourlyRate
+		return regularPay + overTime, nil
+	}
+	return hoursWorked * hourlyRate, nil
 }

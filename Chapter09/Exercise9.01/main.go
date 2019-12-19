@@ -1,9 +1,7 @@
 package main
-
 import (
 	"fmt"
 )
-
 func main() {
 	fname := "Edward"
 	lname := "Scissorhands"
