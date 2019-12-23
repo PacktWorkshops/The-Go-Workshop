@@ -1,14 +1,13 @@
 package main
 
 import (
+	"reflect"
 	"testing"
 )
 
 func TestRemoveBad(t *testing.T) {
-	if _, exists := getName(""); exists {
-		t.Fail()
-	}
-	if name, exists := getName("305"); !exists || name != "Sue" {
+	s := []string{"Good", "Good", "Good", "Good"}
+	if !reflect.DeepEqual(s, removeBad()) {
 		t.Fail()
 	}
 }

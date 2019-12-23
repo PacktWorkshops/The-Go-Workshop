@@ -1,13 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
-func getWeek() []string {
-	week := []string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
-	week = append(week[6:], week[:6]...)
-	return week
+var users = map[string]string{
+	"305": "Sue",
+	"204": "Bob",
+	"631": "Jake",
+	"073": "Tracy",
+}
+
+func getName(id string) (string, bool) {
+	name, exists := users[id]
+	return name, exists
 }
 
 func main() {
-	fmt.Println(getWeek())
+	if len(os.Args) < 2 {
+		fmt.Println("User ID not passed")
+		os.Exit(1)
+	}
+	name, exists := getName(os.Args[1])
+	if !exists {
+		fmt.Printf("error: user (%v) not found", os.Args[1])
+		os.Exit(1)
+	}
+	fmt.Println("Hi,", name)
 }

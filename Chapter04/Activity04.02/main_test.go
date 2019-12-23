@@ -1,13 +1,14 @@
 package main
 
 import (
-	"reflect"
 	"testing"
 )
 
-func TestGetArr(t *testing.T) {
-	s := []string{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
-	if !reflect.DeepEqual(s, getWeek()) {
+func TestRemoveBad(t *testing.T) {
+	if _, exists := getName(""); exists {
+		t.Fail()
+	}
+	if name, exists := getName("305"); !exists || name != "Sue" {
 		t.Fail()
 	}
 }
