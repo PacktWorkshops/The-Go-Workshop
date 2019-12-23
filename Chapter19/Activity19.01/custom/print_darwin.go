@@ -3,5 +3,5 @@ package custom
 import "fmt"
 
 func Print() {
-	fmt.Println("Hello I'm running on darwin")
+	fmt.Println("Hello I am running on a darwin machine.")
 }
