@@ -24,9 +24,5 @@ func main() {
 	if t != nil {
 		fmt.Printf("time  : %#v\n", *t)
 		fmt.Printf("time  : %#v\n", t.String())
-	}
-
-	if count1 == t {
-
-	}
+	}	
 }
