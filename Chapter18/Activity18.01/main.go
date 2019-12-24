@@ -109,6 +109,6 @@ func main() {
 	fmt.Println("checking password match")
 	ciphertext := sha512.Sum512([]byte("NewPassword"))
 	if string(ciphertext[:]) == string(password[:]) {
-		fmt.Println("successfull password match")
+		fmt.Println("successful password match")
 	}
 }
