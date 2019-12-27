@@ -13,20 +13,16 @@ This is the repository for [The Go Workshop](https://courses.packtpub.com/course
 To get started with the project files, you'll need to:
 1. Install the Go Compiler
 To turn your Go source code into something you can run, you'll need the Go compiler.
-For Windows and macOS, we recommend using the installer. Alternatively, to get more
-control you can download precompiled binaries. You can fi nd both at https://packt.
-live/2PRUGjp. The install instructions for both methods on Windows, macOS, and Linux
-are at https://packt.live/375DQDA. The Go compiler is free to download and use.
+For Windows and macOS, we recommend using the installer. The install instructions for both methods on Windows, macOS, and Linux
+are at https://golang.org/doc/install. The Go compiler is free to download and use.
 2. Install Git
-Go uses the version control tool Git to install extra tools and code. You can fi nd the
-instructions for Windows, macOS, and Linux at https://packt.live/35ByRug. Git is free
+Go uses the version control tool Git to install extra tools and code. You can find the
+instructions for Windows, macOS, and Linux at https://git-scm.com/book/en/v2/Getting-Started-Installing-Git. Git is free
 to install and use.
 3. Install Visual Studio Code (Editor/IDE)
 You need something to write your Go source code. This tool is called an editor or an
-Integrated Development Environment (IDE). If you already have an editor you like, you
-can use it with this course if you'd like to.
-If you don't already have an editor, we recommend you use the free editor Visual Studio
-Code. You can download the installer from https://packt.live/35KD2Ek:
+Integrated Development Environment (IDE). We recommend you use the free editor Visual Studio
+Code. You can download the installer from https://code.visualstudio.com/.
 
 ## About The Go Workshop
 
