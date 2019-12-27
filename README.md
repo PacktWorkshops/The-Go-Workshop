@@ -13,7 +13,7 @@ This is the repository for [The Ruby Workshop](https://courses.packtpub.com/cour
 To get started with the project files, you'll need to:
 1. Install Ruby on [Windows](https://rubyinstaller.org/), [Linux/macOS](http://rvm.io/)
 
-## About The Ruby Workshop
+## About The Go Workshop
 
 You already know you want to learn Go, and the smart way to learn anything is to learn by doing. The Go Workshop focuses on building up your practical skills so that you can develop high-performing concurrent applications, or even create Go scripts to automate repetitive daily tasks. You'll learn from real examples that lead to real results.
 
