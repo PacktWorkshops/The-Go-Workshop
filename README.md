@@ -5,13 +5,28 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/PacktWorkshops/The-Ruby-Workshop/pulls)
 [![Ruby 2.6](https://img.shields.io/badge/Ruby-2.6-blue.svg)](https://rubyinstaller.org/)
 
-This is the repository for [The Ruby Workshop](https://courses.packtpub.com/courses/ruby?utm_source=github&utm_medium=repository&utm_campaign=9781838642365&utm_term=Ruby&utm_content=The%20Ruby%20Workshop), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the course from start to finish.
+This is the repository for [The Go Workshop](https://courses.packtpub.com/courses/ruby?utm_source=github&utm_medium=repository&utm_campaign=9781838642365&utm_term=Ruby&utm_content=The%20Ruby%20Workshop), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the course from start to finish.
 
 ## Requirements and Setup
 <a href="https://courses.packtpub.com/courses/ruby?utm_source=github&utm_medium=repository&utm_campaign=9781838642365&utm_term=Ruby&utm_content=The%20Ruby%20Workshop"><img src="https://github.com/PacktWorkshops/Workshop-Covers/blob/master/The%20Ruby%20Workshop.jpg" alt="The Ruby Workshop" height="270px" width="220px" align="right" this.target="_blank"></a>
 
 To get started with the project files, you'll need to:
-1. Install Ruby on [Windows](https://rubyinstaller.org/), [Linux/macOS](http://rvm.io/)
+1. Install the Go Compiler
+To turn your Go source code into something you can run, you'll need the Go compiler.
+For Windows and macOS, I recommend using the installer. Alternatively, to get more
+control you can download precompiled binaries. You can find both at https://packt.
+live/2PRUGjp. The install instructions for both methods on Windows, macOS, and Linux
+are at https://packt.live/375DQDA. The Go compiler is free to download and use.
+2. Install Git
+Go uses the version control tool Git to install extra tools and code. You can find the
+instructions for Windows, macOS, and Linux at https://packt.live/35ByRug. Git is free
+to install and use.
+3. Install Visual Studio Code (Editor/IDE)
+You need something to write your Go source code. This tool is called an editor or an
+Integrated Development Environment (IDE). If you already have an editor you like, you
+can use it with this course if you'd like to.
+If you don't already have an editor, we recommend you use the free editor Visual Studio
+Code. You can download the installer from https://packt.live/35KD2Ek
 
 ## About The Go Workshop
 
