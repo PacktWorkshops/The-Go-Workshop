@@ -8,7 +8,7 @@
 This is the repository for [The Go Workshop](https://courses.packtpub.com/courses/ruby?utm_source=github&utm_medium=repository&utm_campaign=9781838642365&utm_term=Ruby&utm_content=The%20Ruby%20Workshop), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the course from start to finish.
 
 ## Requirements and Setup
-<a href="https://courses.packtpub.com/courses/ruby?utm_source=github&utm_medium=repository&utm_campaign=9781838642365&utm_term=Ruby&utm_content=The%20Ruby%20Workshop"><img src="https://github.com/PacktWorkshops/Workshop-Covers/blob/master/The%20Ruby%20Workshop.jpg" alt="The Ruby Workshop" height="270px" width="220px" align="right" this.target="_blank"></a>
+<a href="https://courses.packtpub.com/courses/go?utm_source=github&utm_medium=repository&utm_campaign=9781838647940&utm_term=Go&utm_content=The%20Go%20Workshop"><img src="https://github.com/PacktWorkshops/Workshop-Covers/blob/master/The%20Go%20Workshop.jpg" alt="The Go Workshop" height="270px" width="220px" align="right" this.target="_blank"></a>
 
 To get started with the project files, you'll need to:
 1. Install the Go Compiler
