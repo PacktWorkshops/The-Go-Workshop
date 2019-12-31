@@ -8,21 +8,12 @@
 This is the repository for [The Go Workshop](https://courses.packtpub.com/courses/go?utm_source=github&utm_medium=repository&utm_campaign=1838647945&utm_term=GO&utm_content=The%20Go%20Workshop), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the course from start to finish.
 
 ## Requirements and Setup
-<a href="https://courses.packtpub.com/courses/go?utm_source=github&utm_medium=repository&utm_campaign=1838647945&utm_term=GO&utm_content=The%20Go%20Workshop"><img src="https://github.com/PacktWorkshops/Workshop-Covers/blob/master/The%20Go%20Workshop.jpg" alt="The Go Workshop" height="270px" width="220px" align="right" this.target="_blank"></a>
+<a href="https://courses.packtpub.com/courses/go?utm_source=github&utm_medium=repository&utm_campaign=1838647945&utm_term=GO&utm_content=The%20Go%20Workshop"><img src="https://github.com/PacktWorkshops/Workshop-Covers/blob/master/The%20Go%20Workshop.jpg" alt="The Go Workshop" height="340px" width="280px" align="right" this.target="_blank"></a>
 
 To get started with the project files, you'll need to:
-1. Install the Go Compiler
-To turn your Go source code into something you can run, you'll need the Go compiler.
-For Windows and macOS, we recommend using the installer. The install instructions for both methods on Windows, macOS, and Linux
-are at https://golang.org/doc/install. The Go compiler is free to download and use.
-2. Install Git
-Go uses the version control tool Git to install extra tools and code. You can find the
-instructions for Windows, macOS, and Linux at https://git-scm.com/book/en/v2/Getting-Started-Installing-Git. Git is free
-to install and use.
-3. Install Visual Studio Code (Editor/IDE)
-You need something to write your Go source code. This tool is called an editor or an
-Integrated Development Environment (IDE). We recommend you use the free editor Visual Studio
-Code. You can download the installer from https://code.visualstudio.com/.
+1. Install the [Go Compiler](https://golang.org/doc/install)
+2. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+3. Install [Visual Studio Code (Editor/IDE)](https://code.visualstudio.com/)
 
 ## About The Go Workshop
 
