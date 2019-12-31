@@ -26,7 +26,7 @@ Code. You can download the installer from https://code.visualstudio.com/.
 
 ## About The Go Workshop
 
-You already know you want to learn Go, and the smart way to learn anything is to learn by doing. The Go Workshop focuses on building up your practical skills so that you can develop high-performing concurrent applications, or even create Go scripts to automate repetitive daily tasks. You'll learn from real examples that lead to real results.
+You already know you want to learn Go, and the smart way to learn anything is to learn by doing. [The Go Workshop](https://courses.packtpub.com/courses/go?utm_source=github&utm_medium=repository&utm_campaign=1838647945&utm_term=GO&utm_content=The%20Go%20Workshop) focuses on building up your practical skills so that you can develop high-performing concurrent applications, or even create Go scripts to automate repetitive daily tasks. You'll learn from real examples that lead to real results.
 
 ## What you will learn
 * Get to grips with Go fundamentals and best practices
