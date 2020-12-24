@@ -48,7 +48,7 @@ func (d *Developer) HoursWorked() int {
 func (d *Developer) PayDay() (int, bool) {
 	if d.HoursWorked() > 40 {
 		hoursOver := d.HoursWorked() - 40
-		overTime := hoursOver * 2
+		overTime := hoursOver * 2 * d.HourlyRate
 		regularPay := d.HoursWorked() * d.HourlyRate
 		return regularPay + overTime, true
 	}
