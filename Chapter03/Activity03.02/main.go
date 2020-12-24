@@ -54,7 +54,7 @@ func checkLoan(creditScore int, income float64, loanAmount float64, loanTerm flo
 		if creditScore >= goodScore && ratio < goodScoreRatio {
 			approved = true
 		} else if ratio < lowScoreRatio {
-			approved = true
+			approved = false
 		}
 	}
 
