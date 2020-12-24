@@ -11,7 +11,7 @@ func compArrays() (bool, bool, [10]int) {
 
 func main() {
 	comp1, comp2, arr3 := compArrays()
-	fmt.Println("[10]int == [...]{9:0}              :", comp1)
-	fmt.Println("[10]int == [10]int{1, 9: 10, 4: 5}}:", comp2)
+	fmt.Println("[10]int == [...]int{9:0}              :", comp1)
+	fmt.Println("[10]int == [10]int{1, 9: 10, 4: 5}:", comp2)
 	fmt.Println("arr3                               :", arr3)
 }
