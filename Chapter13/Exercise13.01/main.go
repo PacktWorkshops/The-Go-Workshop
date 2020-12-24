@@ -33,7 +33,7 @@ _,err = db.Exec(TableCreate)
 if err != nil {
 	panic(err)
 } else{
-	fmt.Println("The table called Messages was successfully created!")
+	fmt.Println("The table called Number was successfully created!")
 }
 
 insert, insertErr := db.Prepare("INSERT INTO Number VALUES($1,$2)")
