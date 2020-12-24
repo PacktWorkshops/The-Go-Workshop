@@ -11,6 +11,9 @@ func passwordChecker(pw string) bool {
 	if len(pwR) < 8 {
 		return false
 	}
+	if len(pwR) > 15 {
+		return false
+	}
 	hasUpper := false
 	hasLower := false
 	hasNumber := false
