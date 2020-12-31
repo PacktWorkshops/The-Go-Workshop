@@ -12,14 +12,14 @@ import (
 func postFileAndReturnResponse(filename string) string {
 	// create a buffer we can write the file to
 	fileDataBuffer := bytes.Buffer{}
-	multipartWritter := multipart.NewWriter(&fileDataBuffer)
+	multipartWriter := multipart.NewWriter(&fileDataBuffer)
 	// open the local file we want to upload
 	file, err := os.Open(filename)
 	if err != nil {
 		log.Fatal(err)
 	}
 	// create an http formfile. This wraps our local file in a format that can be sent to the server
-	formFile, err := multipartWritter.CreateFormFile("myFile", file.Name())
+	formFile, err := multipartWriter.CreateFormFile("myFile", file.Name())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -29,14 +29,14 @@ func postFileAndReturnResponse(filename string) string {
 		log.Fatal(err)
 	}
 	// close the file writter. This lets it know we're done copying in data
-	multipartWritter.Close()
+	multipartWriter.Close()
 	// create the POST request to send the file data to the server
 	req, err := http.NewRequest("POST", "http://localhost:8080", &fileDataBuffer)
 	if err != nil {
 		log.Fatal(err)
 	}
 	// we set the header so the server knows about the files content
-	req.Header.Set("Content-Type", multipartWritter.FormDataContentType())
+	req.Header.Set("Content-Type", multipartWriter.FormDataContentType())
 	// send the POST request and recieve the response data
 	response, err := http.DefaultClient.Do(req)
 	if err != nil {
