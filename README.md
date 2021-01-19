@@ -5,7 +5,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/PacktWorkshops/The-Go-Workshop/pulls)
 [![Go 1.12](https://img.shields.io/badge/Go-1.12-blue.svg)](https://golang.org/doc/install)
 
-This is the repository for [The Go Workshop](https://courses.packtpub.com/courses/go?utm_source=github&utm_medium=repository&utm_campaign=1838647945&utm_term=GO&utm_content=The%20Go%20Workshop), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the course from start to finish.
+This is the repository for [The Go Workshop](https://www.amazon.com/Go-Workshop-Interactive-Approach-Learning-dp-1838647945/dp/1838647945/ref=mt_other?_encoding=UTF8&me=&qid=1611061203&utm_source=github&utm_medium=repository&utm_campaign=9781838647940&utm_term=Go&utm_content=The%20Go%20Workshop), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the course from start to finish.
 
 ## Requirements and Setup
 <a href="https://courses.packtpub.com/courses/go?utm_source=github&utm_medium=repository&utm_campaign=1838647945&utm_term=GO&utm_content=The%20Go%20Workshop"><img src="https://github.com/PacktWorkshops/Workshop-Covers/blob/master/The%20Go%20Workshop.png" alt="The Go Workshop" height="340px" width="280px" align="right" this.target="_blank"></a>
@@ -17,17 +17,21 @@ To get started with the project files, you'll need to:
 
 ## About The Go Workshop
 
-You already know you want to learn Go, and the smart way to learn anything is to learn by doing. [The Go Workshop](https://courses.packtpub.com/courses/go?utm_source=github&utm_medium=repository&utm_campaign=1838647945&utm_term=GO&utm_content=The%20Go%20Workshop) focuses on building up your practical skills so that you can develop high-performing concurrent applications, or even create Go scripts to automate repetitive daily tasks. You'll learn from real examples that lead to real results.
+[The Go Workshop](https://www.amazon.com/Go-Workshop-Interactive-Approach-Learning-dp-1838647945/dp/1838647945/ref=mt_other?_encoding=UTF8&me=&qid=1611061203&utm_source=github&utm_medium=repository&utm_campaign=9781838647940&utm_term=Go&utm_content=The%20Go%20Workshop) takes you from being a novice Go programmer to a confident developer who can leverage the key features of the language to build real-world applications. This workshop helps you cut through excessive theory and delve into the practical features and techniques that are commonly applied to design performant, scalable applications.
 
 ## What you will learn
-* Get to grips with Go fundamentals and best practices
-* Learn how to effectively organize your code for production environments
-* Explore how third-party packages can help make you a better engineer
-* Keep your development process bug-free with unit tests and benchmarks  
+* Understand Go syntax and use it to handle data and write functions
+* Debug your Go code to troubleshoot development problems
+* Safely handle errors and recover from panics
+* Implement polymorphism by using interfaces
+* Work with files and connect to external databases
+* Create a HTTP client and server and work with a RESTful web API
+* Use concurrency to design software that can multitask
+* Use Go Tools to simplify development and improve your code
 
 ## Related Workshops
 If you've found this repository useful, you might want to check out some of our other workshop titles:
-* [The PHP Workshop](https://courses.packtpub.com/courses/php?utm_source=github&utm_medium=repository&utm_campaign=9781838648916&utm_term=PHP&utm_content=The%20PHP%20Workshop)
-* [The Java Workshop](https://courses.packtpub.com/courses/java?utm_source=github&utm_medium=repository&utm_campaign=9781838986698&utm_term=Java&utm_content=The%20Java%20Workshop)
-* [The Ruby Workshop](https://courses.packtpub.com/courses/ruby?utm_source=github&utm_medium=repository&utm_campaign=9781838642365&utm_term=Ruby&utm_content=The%20Ruby%20Workshop)
-* [The Python Workshop](https://courses.packtpub.com/courses/python?utm_source=github&utm_medium=repository&utm_campaign=9781839218859&utm_term=Python&utm_content=The%20Python%20Workshop)
+* [The JavaScript Workshop](https://www.amazon.com/JavaScript-Workshop-Interactive-Approach-Learning-ebook/dp/B0824584WF/ref=sr_1_1?dchild=1&keywords=The%20JavaScript%20Workshop&qid=1611056880&sr=8-1&utm_source=GitHub&utm_medium=Repository&utm_campaign=9781838641917&utm_term=JavaScript&utm_content=The%20JavaScript%20Workshop)
+* [The React Workshop](https://www.amazon.com/React-Workshop-Interactive-Approach-Learning-ebook/dp/B082VG6JCL/ref=sr_1_1?dchild=1&keywords=The%20React%20Workshop&qid=1611056710&sr=8-1&utm_source=GitHub&utm_medium=Repository&utm_campaign=9781838645564&utm_term=React&utm_content=The%20React%20Workshop)
+* [The Front End Development Projects with Vue.js Workshop](https://www.amazon.com/Front-End-Development-Projects-Vue-js-applications-dp-1838984828/dp/1838984828/ref=mt_other?_encoding=UTF8&me=&qid=1611065499&utm_source=github&utm_medium=repository&utm_campaign=9781838984823&utm_term=Vue&utm_content=Front-End%20Development%20Projects%20with%20Vue.js)
+
